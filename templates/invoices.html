@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Invoices</title>
+</head>
+<body>
+    <h1>Invoices</h1>
+    <div><a href="/">Back to Home</a></div>
+    <div><a href="/invoices/new">New Invoice</a></div>
+    <ul>
+        {% for invoice in invoices %}
+        <li>{{ invoice.ref }} - {{ invoice.details }} - {{ invoice.amount }}</li>
+        {% endfor %}
+    </ul>
+</body>
+</html>

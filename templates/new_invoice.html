@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>New Invoice</title>
+</head>
+<body>
+    <h1>New Invoice</h1>
+    <form method="post">
+        <label for="customer_id">Customer:</label><br>
+        <select id="customer_id" name="customer_id">
+            {% for customer in customers %}
+            <option value="{{ customer.id }}">{{ customer.name }}</option>
+            {% endfor %}
+        </select><br>
+        <label for="ref">Reference:</label><br>
+        <input type="text" id="ref" name="ref"><br>
+        <label for="details">Details:</label><br>
+        <input type="text" id="details" name="details"><br>
+        <label for="amount">Amount:</label><br>
+        <input type="number" id="amount" name="amount" step="0.01"><br>
+        <input type="submit" value="Create Invoice">
+    </form>
+    <div><a href="/invoices">Back to Invoices</a></div>
+</body>
+</html>

@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Payments</title>
+</head>
+<body>
+    <h1>Payments</h1>
+    <div><a href="/">Back to Home</a></div>
+    <div><a href="/payments/new">New Payment</a></div>
+    <ul>
+        {% for payment in payments %}
+        <li>{{ payment.ref }} - {{ payment.amount }}</li>
+        {% endfor %}
+    </ul>
+</body>
+</html>
