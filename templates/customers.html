@@ -10,26 +10,11 @@
     <h1>Customers</h1>
     <div><a href="/">Back to Home</a></div>
     <div><a href="/customers/new">New Customer</a></div>
-    <table>
-        <thead>
-            <tr>
-                <th>Account Ref</th>
-                <th>Name</th>
-                <th>Email</th>
-                <th>Balance</th>
-            </tr>
-        </thead>
-        <tbody>
-            {% for customer in customers %}
-            <tr>
-                <td>{{ customer.acct_ref }}</td>
-                <td>{{ customer.name }}</td>
-                <td>{{ customer.email }}</td>
-                <td>{{ customer.balance }}</td>
-            </tr>
-            {% endfor %}
-        </tbody>
-    </table>
+    <ul>
+        {% for customer in customers %}
+        <li>{{ customer.acct_ref }} - {{ customer.name }} - {{ customer.email }}</li>
+        {% endfor %}
+    </ul>
 </body>
 </html>
 

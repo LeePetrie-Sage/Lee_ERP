@@ -25,11 +25,10 @@ def new_customer():
         acct_ref = request.form['acct_ref']
         name = request.form['name']
         email = request.form['email']
-        balance = request.form['balance']
 
         conn = get_db_connection()
-        conn.execute('INSERT INTO customers (acct_ref, name, email, balance) VALUES (?, ?, ?, ?)',
-                     (acct_ref, name, email, balance))
+        conn.execute('INSERT INTO customers (acct_ref, name, email) VALUES (?, ?, ?)',
+                     (acct_ref, name, email))
         conn.commit()
         conn.close()
         return redirect(url_for('customers'))
@@ -91,4 +90,3 @@ def new_payment():
 
 if __name__ == '__main__':
     app.run(debug=True)
-
